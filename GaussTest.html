@@ -1,0 +1,76 @@
+<!doctype html>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<title>高斯坐标正反算示例</title>
+<style>
+label {
+	display: inline-block;
+	min-width: 4em;
+	text-align: right;
+}
+.output {
+	margin: 10px 0;
+	min-height: 2em;
+	line-height: 2em;
+	color: blue;
+	border: 1px dashed #ccc;
+	padding: 0 2em;
+}
+</style>
+</head>
+<body>
+
+<p>高斯坐标 => 经纬度坐标</p>
+<label for="y">横轴坐标</label>
+<input id="y"></input>
+<label for="x">纵轴坐标</label>
+<input id="x"></input>
+<input type="button" onclick="calcGaussCoor()" value="计算"></input>
+<div id="message1" class="output"></div>
+
+<p>经纬度坐标 => 高斯坐标</p>
+<label for="lon">经度</label>
+<input id="lon"></input>
+<label for="lat">纬度</label>
+<input id="lat"></input>
+<input type="button" onclick="calcLatLonCoor()" value="计算"></input>
+<div id="message2" class="output"></div>
+
+<script src="Gauss.js"></script>
+<script>
+var eleX = document.getElementById("x"),
+	eleY = document.getElementById("y"),
+	eleLon = document.getElementById("lon"),
+	eleLat = document.getElementById("lat"),
+	eleMessage1 =document.getElementById("message1"),
+	eleMessage2 =document.getElementById("message2");
+function calcGaussCoor() {
+	var x = parseFloat(eleX.value),
+		y = parseFloat(eleY.value);
+
+	if (x && y) {
+		var coor = GaussUtil.toLatLon(x, y);
+		if (coor) {
+			eleMessage1.innerHTML = y.toFixed(3) + ", " + x.toFixed(3) + " => " + coor.lon.toFixed(3) + ", " + coor.lat.toFixed(3);
+		}
+	} else {
+		alert("请输入坐标");
+	}
+}
+function calcLatLonCoor() {
+	var lon = parseFloat(eleLon.value),
+		lat = parseFloat(eleLat.value);
+
+	if (lon && lat) {
+		var coor = GaussUtil.fromLatLon(lat, lon);
+		if (coor) {
+			eleMessage2.innerHTML = lon.toFixed(3) + ", " + lat.toFixed(3) + " => " + coor.y.toFixed(3) + ", " + coor.x.toFixed(3);
+		}
+	} else {
+		alert("请输入坐标");
+	}
+}
+</script>
+</body>
+</html>
