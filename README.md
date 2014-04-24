@@ -1,7 +1,8 @@
 GaussKrugerUtil
 ===============
 
-Simply JavaScript code, used to translate Gauss Kruger project coordinate with LatLon coordinate.
+Simply JavaScript code, used to translate Gauss Kruger project coordinate with 
+LatLon coordinate.
 
 嘿，英文不是很好，为了避免写出一些我都害怕的东西，我还是主动用中文啦。当然，也省
 得还得边想边查字典....
@@ -14,4 +15,15 @@ Simply JavaScript code, used to translate Gauss Kruger project coordinate with L
 可以用一百多行代码搞定，而且只是其中的计算公式复杂些而已，那么用 JavaScript 应该
 也可以解决了。于是，花了几个小时时间，改写了一些，OK。
 
-by luobo 2014/4/23
+__by luobo 2014/4/23__
+
+在 GitHub 上搜了一下，原来也有类似的项目。看介绍，原来是看到一个 JavaScript 的实现
+然后用 Java 重写的....原来如此。于是过去看了下[地址](http://latlong.mellifica.se/)。
+
+代码还是可以看下的，不过同样地，里面的算法我是搞不明白的。而且感觉作者很 decent（不
+知道这个词用得是否正确），代码写得扎扎实实的。最有意思的是，呵呵，作者的个人网站上
+的图片很有爱啊。
+
+PS: 作者不知道是哪国人啊，主页的内容看不懂啊....
+
+__by luobo 2014/4/24__
