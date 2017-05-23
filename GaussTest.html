@@ -52,7 +52,7 @@ function calcGaussCoor() {
 	if (x && y) {
 		var coor = GaussUtil.toLatLon(x, y);
 		if (coor) {
-			eleMessage1.innerHTML = y.toFixed(3) + ", " + x.toFixed(3) + " => " + coor.lon.toFixed(3) + ", " + coor.lat.toFixed(3);
+			eleMessage1.innerHTML = y.toFixed(4) + ", " + x.toFixed(4) + " => " + coor.lon.toFixed(9) + ", " + coor.lat.toFixed(9);
 		}
 	} else {
 		alert("请输入坐标");
@@ -65,7 +65,7 @@ function calcLatLonCoor() {
 	if (lon && lat) {
 		var coor = GaussUtil.fromLatLon(lat, lon);
 		if (coor) {
-			eleMessage2.innerHTML = lon.toFixed(3) + ", " + lat.toFixed(3) + " => " + coor.y.toFixed(3) + ", " + coor.x.toFixed(3);
+			eleMessage2.innerHTML = lon.toFixed(9) + ", " + lat.toFixed(9) + " => " + coor.y.toFixed(4) + ", " + coor.x.toFixed(4);
 		}
 	} else {
 		alert("请输入坐标");
